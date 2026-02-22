@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#007bff">
+</head>
+<body>
+
+<div class="container">
+  <h2>Task Manager</h2>
+
+  <input type="text" id="taskName" placeholder="Enter task name">
+  <input type="date" id="taskDate">
+  <input type="time" id="taskTime">
+
+  <button class="add-btn" onclick="addTask()">Add Task</button>
+
+  <!-- VIEW TOGGLE -->
+  <button class="view-btn" onclick="toggleAllTasks()">Show All Tasks</button>
+
+  <!-- ALL TASKS SECTION -->
+  <div id="allTasksSection" style="display:none;">
+    <h3>All Tasks</h3>
+    <ul id="allTasksList"></ul>
+  </div>
+
+  <!-- NORMAL VIEW -->
+  <div id="normalView">
+
+    <h3>Today Tasks</h3>
+    <ul id="pendingList"></ul>
+
+    <h3>Upcoming Tasks</h3>
+    <ul id="upcomingList"></ul>
+
+    <h3>Completed Tasks</h3>
+    <ul id="completedList"></ul>
+    <button id="exportBtn" class="secondary-btn">Export Backup</button>
+<button id="importBtn" class="secondary-btn">Import Backup</button>
+<input type="file" id="importFile" accept="application/json" hidden>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
